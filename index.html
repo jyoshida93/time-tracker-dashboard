@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="index.js"></script>
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body class="page">
+  <main class="page-inner">
+    <section class="main-section">
+      <div class="user">
+        <img class="avatar" src="images/image-jeremy.png" alt="Image of the user Jeremy Robson">
+        <div class="user-text">
+          <p class="report-for">Report for</p>
+          <h1 class="username">Jeremy Robson</h1>
+        </div>
+      </div>
+      <div class="timescale-selection">
+         <div>
+           <a id="daily-selection" class="timescale-option inactive" href="#">Daily</a>
+         </div>
+         <div>
+           <a id="weekly-selection" class="timescale-option" href="#">Weekly</a>
+         </div>
+         <div>
+           <a id="monthly-selection" class="timescale-option inactive" href="#">Monthly</a>
+         </div>
+      </div>
+    </section>
+    <section class="work-section activity-section-top">
+      <div class="activity-section-info activity-info-grid">
+        <h2 class="activity-type">Work</h2>
+        <div class="ellipse-container">
+          <a href="#">
+            <img src="images/icon-ellipsis.svg" alt="Clickable ellipse">
+          </a>
+        </div>
+        <p id="work-current-period" class="current-period-time">xhrs</p>
+        <div class="flex-container">
+          <p id="work-previous-period" class="last-period-time">Last Week - 36hrs</p>
+        </div>
+      </div>
+    </section>
+    <section class="play-section activity-section-top">
+      <div class="activity-section-info activity-info-grid">
+        <h2 class="activity-type">Play</h2>
+        <div class="ellipse-container">
+          <a href="#">
+            <img src="images/icon-ellipsis.svg" alt="Clickable ellipse">
+          </a>
+        </div>
+        <p id="play-current-period" class="current-period-time">100hrs</p>
+        <div class="flex-container">
+          <p id="play-previous-period" class="last-period-time">Last Week - y</p>
+        </div>
+      </div>
+    </section>
+    <section class="study-section activity-section-top">
+      <div class="activity-section-info activity-info-grid">
+        <h2 class="activity-type">Study</h2>
+        <div class="ellipse-container">
+          <a href="#">
+            <img src="images/icon-ellipsis.svg" alt="Clickable ellipse">
+          </a>
+        </div>
+        <p id="study-current-period" class="current-period-time">xhrs</p>
+        <div class="flex-container">
+          <p id="study-previous-period" class="last-period-time">Last Week - y</p>
+        </div>
+      </div>
+    </section>
+    <section class="exercise-section activity-section-top">
+      <div class="activity-section-info activity-info-grid">
+        <h2 class="activity-type">Exercise</h2>
+        <div class="ellipse-container">
+          <a href="#">
+            <img src="images/icon-ellipsis.svg" alt="Clickable ellipse">
+          </a>
+        </div>
+        <p id="exercise-current-period" class="current-period-time">10hrs</p>
+        <div class="flex-container ellipse">
+          <p id="exercise-previous-period" class="last-period-time">Last Week - y</p>
+        </div>
+      </div>
+    </section>
+    <section class="social-section activity-section-top">
+      <div class="activity-section-info activity-info-grid">
+        <h2 class="activity-type">Social</h2>
+        <div class="ellipse-container">
+          <a href="#">
+            <img src="images/icon-ellipsis.svg" alt="Clickable ellipse">
+          </a>
+        </div>
+        <p id="social-current-period" class="current-period-time">xhrs</p>
+        <div class="flex-container">
+          <p id="social-previous-period" class="last-period-time">Last Week - y</p>
+        </div>
+      </div>
+    </section>
+    <section class="self-care-section activity-section-top">
+      <div class="activity-section-info activity-info-grid">
+        <h2 class="activity-type">Self Care</h2>
+        <div class="ellipse-container">
+          <a href="#">
+            <img src="images/icon-ellipsis.svg" alt="Clickable ellipse">
+          </a>
+        </div>
+        <p id="self-care-current-period" class="current-period-time">xhrs</p>
+        <div class="flex-container">
+          <p id="self-care-previous-period" class="last-period-time">Last Week - y</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">jyoshida93</a>.
+    </div>
+  </footer>
+</body>
+
+</html>

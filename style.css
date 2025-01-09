@@ -1,0 +1,329 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+:root {
+    --blue: hsl(246, 80%, 60%);
+    --light-red-work: hsl(15, 100%, 70%);
+    --soft-blue-play: hsl(195, 74%, 62%);
+    --light-red-study: hsl(348, 100%, 68%);
+    --lime-green-excersise: hsl(145, 58%, 55%);
+    --violet-social: hsl(264, 64%, 52%);
+    --soft-orange-self-care: hsl(43, 84%, 65%);
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desaturated-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
+    --border-radius: 0.9375rem;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.125rem;
+    background-color: var(--very-dark-blue);
+    color: white;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-inner {
+    display: grid;
+    grid-template-areas:
+        'main'
+        'work'
+        'play'
+        'study'
+        'exercise'
+        'social'
+        'self-care'
+    ;
+    gap: 1.5rem;
+    margin: 5rem 1.5rem;
+    width: calc(100vw - 3rem);
+    max-width: 25rem;
+}
+
+.main-section {
+    grid-area: main;
+    background-color: var(--dark-blue);
+    border-radius: var(--border-radius);
+}
+
+.user {
+    display: flex;
+    padding: 2.125rem 1.5rem;
+    gap: 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--blue);
+}
+
+.report-for {
+    color: var(--pale-blue);
+    font-size: 0.9375rem;
+}
+
+.username {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.avatar {
+    height: 4rem;
+    width: 4rem;
+    border: 3px white solid;
+    border-radius: 3rem;
+}
+
+.timescale-selection {
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.timescale-option {
+    text-decoration: none;
+    color: inherit;
+}
+
+.timescale-option:hover{
+    color: white;
+}
+
+.activity-section-info {
+    position: relative;
+    background-color: var(--dark-blue);
+    border-radius: var(--border-radius);
+    top: 2px;
+    padding: 1.5rem;
+}
+
+.activity-section-top {
+    border-radius: var(--border-radius);
+    padding-top: 2.25rem;
+    background-size: 72px 72px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1.25rem) -0.25rem;
+}
+
+.work-section {
+    grid-area: work;
+    background-color: var(--light-red-work);
+    background-image: url('images/icon-work.svg');
+}
+
+.play-section {
+    grid-area: play;
+    background-color: var(--soft-blue-play);
+    background-image: url('images/icon-play.svg');
+}
+
+.study-section {
+    grid-area: study;
+    background-color: var(--light-red-study);
+    background-image: url('images/icon-study.svg');
+}
+
+.exercise-section {
+    grid-area: exercise;
+    background-color: var(--lime-green-excersise);
+    background-image: url('images/icon-exercise.svg');
+}
+
+.social-section {
+    grid-area: social;
+    background-color: var(--violet-social);
+    background-image: url('images/icon-social.svg');
+}
+
+.self-care-section {
+    grid-area: self-care;
+    background-color: var(--soft-orange-self-care);
+    background-image: url('images/icon-self-care.svg');
+}
+
+.activity-info-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+}
+
+.activity-type {
+    font-size: 1.125rem;
+}
+
+.current-period-time {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.last-period-time {
+    font-size: 0.9375rem;
+    color: var(--pale-blue);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.ellipse-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.inactive {
+    color: var(--pale-blue);
+}
+
+@media (min-width: 64rem) {
+    body {
+        height: 100vh;
+    }
+
+    .page-inner {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            'main work play study'
+            'main exercise social self-care'
+        ;
+        gap: 2rem 1.5rem;
+        width: 78%;
+        min-width: 64rem;
+        max-width: 75rem;
+    }
+
+    .user {
+        flex-direction: column;
+        padding: 2.125rem 5rem 5rem 2rem;
+        gap: 2.5rem;
+    }
+
+    .username {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .avatar {
+        height: 5rem;
+        width: 5rem;
+    }
+
+    .timescale-selection {
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .activity-info-grid {
+        grid-template-columns: 1.5fr minmax(2rem, 0.5fr);
+        gap: 0.25rem;
+    }
+
+    .activity-type {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .current-period-time {
+        grid-column: 1;
+        grid-row: 2;
+        font-size: 3.5rem;
+    }
+
+    .last-period-time {
+        white-space: nowrap;
+    }
+    
+    .flex-container {
+        justify-content: flex-start;
+        grid-column: 1;
+        grid-row: 3
+    }
+
+    .ellipse-container {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .activity-section-top {
+        padding-top: 2.5rem;
+    }
+
+    .activity-section-info {
+        padding: 1.75rem;
+        top: 0.75rem;
+    }
+}
